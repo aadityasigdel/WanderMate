@@ -4,7 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],  theme: {
-    extend: {},
+    extend: {
+
+      height: {
+        'im': '800px',
+      },
+    },
   },
   plugins: [],
 }

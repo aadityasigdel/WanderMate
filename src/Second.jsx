@@ -8,13 +8,24 @@ function Second() {
         password: "",
     });
     const handlesubmit = (e) => {
-    e.preventDefault();
-        console.log( formdata);
+        e.preventDefault();
+        console.log(formdata);
     };
     const handelchange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formdata, [name]: value });
     };
+
+    const Validation = () =>{
+        if(formdata.username == "" || formdata.password == "" ) 
+            {
+            alert("Please fill te form ");
+        }
+        else 
+        {
+            alert("login success");
+        }
+    }
     return (
         <>
             <form onSubmit={handlesubmit}>
@@ -42,7 +53,10 @@ function Second() {
                         </label>
                         <input type="Checkbox" />
                     </div>
-                    <button className="bg-blue-400 border-1 p-3 text-white rounded-md w-1/6 m-3">
+                    <button
+                        className="bg-blue-400 border-1 p-3 text-white rounded-md w-1/6 m-3"
+                        onClick={Validation}
+                    >
                         Sign In
                     </button>
                     <div className="flex m-3">

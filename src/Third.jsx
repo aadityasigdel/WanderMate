@@ -7,6 +7,7 @@ function Third() {
         username: "",
         email: "",
         password: "",
+        
     });
     function handlesubmit(e) {
         e.preventDefault();
@@ -16,6 +17,16 @@ function Third() {
     function handelchange(e) {
         const { name, value } = e.target;
         setFormData({ ...formdata, [name]: value });
+    }
+
+    const apple = () =>{
+        if (formdata.username =="" || formdata.password == "" || formdata.email == "" )
+        {
+            alert("Please fill the form");
+        }
+        else{
+            alert("login success");
+        }
     }
     return (
         <>
@@ -61,12 +72,13 @@ function Third() {
                         required
                     />
                     <div className="flex ">
-                        <input id="agree" className="m-2" type="Checkbox" />
+                        <input id="agree" className="m-2" type="Checkbox" required />
                         <label>I agree to the Terms of Service</label>
                     </div>
                     <button
                         id="signup"
-                        className="text-white bg-blue-600 p-3 rounded-md w-1/6 m-3 "
+                        className="text-white bg-blue-600 p-3 rounded-md w-1/6 m-3"
+                        onClick = {apple}
                     >
                         Sign Up
                     </button>
